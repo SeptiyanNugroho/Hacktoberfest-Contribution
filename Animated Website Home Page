@@ -1,0 +1,268 @@
+<html>
+<head>
+<title></title>
+<!-- Apply styles to html elements -->
+<style>
+*{
+margin:0; padding:0; boxsizing:border-box;
+}
+header{
+width: 100%; height: 100vh;
+background-color: white;
+background-repeat: no-repeat;
+background-size: cover;
+}
+nav{
+width: 100%; height: 15vh;
+background: black;
+display: flex; justify-content: space-between;
+align-items: center;
+}
+nav .mainmenu{
+width: 40%;
+display: flex; justify-content: space-around;
+}
+main{
+width: 100%; height: 85vh;
+display: flex; justify-content: center;
+align-items: center;
+text-align: center;
+}
+section h3{
+letter-spacing: 3px; font-weight: 200;
+}
+section h1{
+text-transform: uppercase;
+}
+section div{
+animation:changeborder 10s infinite linear;
+border: 7px solid red;
+}
+@keyframes changeborder{
+0%
+20%
+40%
+}
+</style>
+</head>
+<body>
+<!--Let us create a simple menu using the navigation tags-->
+<!--Use header to indicate that manu will be a part of header -->
+<header>
+<nav>
+<div class = "logo" <h3 style="color:white;">MYLOGO</h3></div>
+<!--Lets define the menu items now-->
+<div class = "mainmenu">
+<a href="https://hackr.io/tutorials/learn-html-5">Home</a>
+<a href="https://hackr.io/tutorials/learn-html-5">About Us</a>
+<a href="https://hackr.io/tutorials/learn-html-5">Contact Us</a>
+</div>
+</nav>
+<!--Let us create the main section now, if you are not using html5, use div tags-->
+<main>
+<section>
+<!--Check out the styling elements for this div class - change_text -->
+<div class = "change_text"><b>WELCOME TO XXX ELECTRONICS</b></div>
+<!--make text italic-->
+<p><i>All your electronics needs in one place</i></p><br>
+<!--create a button, if there is a form, you can specify an action on click-->
+<input type = button value = "view more">
+</section>
+</main>
+</header>
+</body>
+</html>
+The above code will produce the following output. The color of the box will vary.
+
+Animated website home page
+
+6. Video Background Site
+This project explains with full source code, how we can add a video background to a web page. The foreground contains some text. The project uses HTML5. The speaker also tells a simple trick to avoid scrollbars. You will also learn to add text at the forefront and style it to appear in the centre of the page. If you resize the page, the video resizes and comes as per the screen size by setting simple CSS values. Videos in the background can give a lovely effect to your website and make it interactive. View the video background animation for the code and explanations.
+
+
+
+7. Create an Image Slider 
+Image slider or slide show is a prevalent functionality that most websites show today. In any site, for example, fashion, food, services, etc., you can observe that most of the content is shown through multiple images. If you know how to display images as a slideshow, the other content can be developed by using plain input and other data types. The entire project has been done using only HTML and CSS, and no JavaScript, thus avoiding any cross-browser issues. The speaker explains the functionality in detail here. 
+
+
+
+
+
+8. Interactive Restaurant Website
+In this project, we will create an interactive homepage of a restaurant, where the background image will change when we hover over a menu option. For example, if you hover over menu navigation, it will display a menu card, if you hover over the home, it will show the default. You have to give your image names and locations for this to work. This functionality is done through jQuery. Same way, the ‘order now’ button will keep flashing. We have done this by using @keyframes functionality which we have used in our animated website project too. Here is the code for this: 
+
+<html>
+<head>
+    <style>
+        body{
+   font-size:20px;
+            color: white;
+            background-size: cover;
+        }
+         .box{ width: 900px;
+       float:right;
+       border:1px solid none;}
+       .box ul li{
+           width: 120px;
+           float:left;
+           margin: 10px auto;
+           text-align: center;
+       }
+ .mainmenu
+.mainmenu a
+.mainmenu a:hover
+.mainmenu img{
+position: fixed;
+z-index: -1;
+top:0px; left:0px; width:100%; height: 100vh;
+opacity: 0.9;
+/*object-fit:cover;*/
+transition: all ease 0.5s;
+}
+   .wd{
+           width: 300px;
+           height: 539px;
+           background-color: black;
+           opacity: 0.8;
+           padding: 55px;
+       }
+       .wd h1{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: 300px;
+       }
+       .wd h4{
+           text-align: justify;
+           color:darkgray;
+           font-weight: 100px;
+       }
+       .wd h2{
+           text-align: center;
+           text-transform: uppercase;
+           font-weight: normal;
+           margin: 40px auto;
+       }
+       .opt form , input[type="button"]{
+           background-color: black;
+           color:white;
+         /* padding:10px;*/
+           margin:-14px auto;
+           padding-left: 50px;
+           padding-right: 50px;
+           text-align: center;
+           font-size: 16px;
+       }
+     form, input[type="button"] {
+       animation: glowing 300ms infinite;
+       font-weight: 500%;
+      }
+      @keyframes glowing {
+ 0% {
+   background-color: red;
+ }
+ 50% {
+   background-color: orange;
+ }
+ 100% {
+   background-color: blue;
+ }
+}
+   </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(function(){
+var image = $(".mainmenu").find('img').attr('src');
+$(".mainmenu a").mouseover(function(){
+var newimg = $(this).attr('data-image');
+$(this).parent().find('img').attr("src", newimg);
+});
+});
+</script>
+   <div class="box">
+<div class="mainmenu">
+<img src="food.png">
+<a data-image = "food.png" href=""> Home</a>
+<a data-image = "menucard.jpg" href=""> Menu</a>
+<a href=""> FAQ</a>
+<a href=""> Contact</a>
+</div>
+   </div>
+   <div class="wd">
+<h1> Welcome to xxx</h1>
+<h4> <i>Order delicious food online, 100% quality, safety and taste assured.</i></h4>
+<h2> Call 999999999 for reservations</h2>
+<div class="opt">
+<form action="" method="post">
+<input type="button" value="ORDER NOW">
+</form>
+</div>
+</div>
+</body>
+</html>
+The output will be: 
+
+Interactive restaurant website
+
+Upon hovering on the menu navigation, the page will look like:
+
+menu navigation
+
+9. e-Voting System
+In this project, you will learn to take various inputs from the user for an e-voting system, including the date, that is shown as a calendar. Styling has been done using CSS. You will also learn how to submit a form and redirect to the next page. The project shows how to add different HTML elements like input boxes, radio buttons, dropdowns, etc.; however, you can add more details to build a full-fledged form over and above the code given in the project video. Watch the video here to learn how to make this page and submit the information.
+
+10. Grid Responsive Website Layout
+This is a single-page website page that includes multiple HTML and CSS components. A little complex project, but at the end of it, you should be able to create a page with a CSS grid on your own. The speaker uses simple HTML and CSS elements with good explanations. Whatever you have learned in other projects, you will be able to apply all that and more in this project. The project also includes how to make the page mobile-friendly. The page uses some new techniques like flex and media queries as well. Check out the video:
+
+
+
+Conclusion
+In this article, we discussed some basic HTML projects ideas you can try, but the learning doesn’t end here. You can work on loads of other interactive projects and add complexity to these projects, combine any of these projects to make it one, and play around with different tags. Build responsive real-world websites with HTML5 and CSS3 is a great course to enhance your HTML learning. Check out more free and paid tutorials here.
+
+Have you tried building something of your own? Share your experiences below.
+
+People are also reading:
+
+Best HTML Courses
+Best HTML Certifications
+Top HTML Interview Questions
+Top HTML5 Interview Questions
+Download HTML Cheat Sheet
+How to become a web developer?
+Best Web Development IDE
+Best Web Development Frameworks
+What is Web Development Architecture?
+CSS vs CSS2
+Best CSS Editor
+Types of CSS
+tags HTML HTML5 HTML Projects Projects
+Share: share-facebook share-twitter share-linkedin share-reddit share-hackrnews share-whatsapp
+Ramya Shankar
+Ramya Shankar
+A cheerful, full of life and vibrant person, I hold a lot of dreams that I want to fulfill on my own. My passion for writing started with small diary entries and travel blogs, after which I have moved on to writing well-researched technical content. I find it fascinating to blend thoughts and research and shape them into something beautiful through my writing. View all posts by the Author
+
+Related Posts
+HTML Interview Questions and Answers
+HTML Interview Questions and Answers
+9 Best HTML Certifications to Become a Web Developer
+9 Best HTML Certifications to Become a Web Developer
+Best  HTML Courses for Web Development in 2021
+Best HTML Courses for Web Development in 2021
+Leave a comment
+Email address*
+Enter email
+Your email will not be publishedName*
+Name
+Comment*
+Nagesh
+Nagesh
+am doing a project on Web development. plz give some ideas in web development..
+
+ Reply
+Uday singh
+Uday singh
+After this i am going to love html. Thank you so much.
+
+ Reply
+Hacktoberfest2021
